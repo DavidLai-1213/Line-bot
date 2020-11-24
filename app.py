@@ -51,28 +51,14 @@ def handle_message(event):
 
         return
 
-    if '幹' in msg:
-        sticker_message = StickerSendMessage(
-            package_id='1',
-            sticker_id='118'
-        )
-
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text= '幹!是屁孩喔!只會罵髒話')
-
-        line_bot_api.reply_message(
-            event.reply_token, sticker_message)
-
-        return
-
     if msg in ['hi', 'Hi', '嗨']:
         r = 'hi'
     elif msg == '你吃飯了嗎':
         r = '還沒，乾你屁事'
     elif msg == '你是誰':
         r = '林老杯啦'
-    
+    elif '幹' in msg:
+        r = '幹!是屁還喔!只會罵髒話'
 
     line_bot_api.reply_message(
         event.reply_token,
