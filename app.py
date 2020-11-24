@@ -40,11 +40,14 @@ def handle_message(event):
     msg = event.message.text
     r = '我他媽看不懂你在寫甚麼雞八毛'
 
-    if msg == 'hi':
+    if msg in ['hi', 'Hi', '嗨']:
         r = 'hi'
     elif msg == '你吃飯了嗎':
         r = '還沒，乾你屁事'
-
+    elif msg == '你是誰':
+        r = '林老杯啦'
+    elif '幹' in msg:
+        r = '幹!是屁還喔!只會罵髒話'
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text= r))
