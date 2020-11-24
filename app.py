@@ -59,11 +59,7 @@ def handle_message(event):
 
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text= '幹!是屁孩喔!只會罵髒話'))
-        
-
-        line_bot_api.reply_message(
-            event.reply_token,
+            TextSendMessage(text= '幹!是屁孩喔!只會罵髒話')
             sticker_message)
 
         return
